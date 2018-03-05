@@ -7,13 +7,11 @@ public class MatrixBuilder {
 
 
   public static Matrix build(double[][] source) {
-    //TODO
-    return null;
+    return new MyMatrix(source);
   }
 
   public static Matrix build(int nRows, int nCols) {
-    //TODO
-    return null;
+    return new MyMatrix(nRows, nCols);
   }
 
 }
