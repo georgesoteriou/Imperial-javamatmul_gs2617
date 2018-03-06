@@ -1,5 +1,8 @@
 package uk.ac.imperial.matrixmult;
 
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
 public class MyMatrix implements Matrix {
     int nRows;
     int nCols;
@@ -35,5 +38,9 @@ public class MyMatrix implements Matrix {
     @Override
     public int getNumColumns() {
         return nCols;
+    }
+
+    public double[][] getMatrix() {
+        return matrix;
     }
 }

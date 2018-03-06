@@ -1,31 +1,20 @@
 package uk.ac.imperial.matrixmult;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class MatrixMultiplier {
 
   public static Matrix multiply(Matrix a, Matrix b) throws Exception {
     if(a.getNumColumns() == b.getNumRows()){
-      double[][] c = new double[a.getNumRows()][b.getNumColumns()];
-      
-      MultiplyRow[] rowThreads = new MultiplyRow[a.getNumRows()];
 
-      for (int i = 0; i < a.getNumRows(); i++) { // aRow
-        rowThreads[i] = new MultiplyRow(i, c, a, b);
-      }
+      return new MyMatrix(Arrays.stream(a.getMatrix()).parallel()
+              .map(row -> IntStream.range(0, b.getNumColumns())
+                      .mapToDouble(i -> IntStream.range(0, b.getNumRows())
+                              .mapToDouble(j -> row[j] * b.get(j,i)).sum())
+                      .toArray())
+              .toArray(double[][]::new));
 
-      Arrays.stream(rowThreads).forEach(Thread::start);
-
-      Arrays.stream(rowThreads).forEach(u -> {
-        try {
-          u.join();
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-      });
-
-
-      return new MyMatrix(c);
     }else {
       throw new Exception();
     }

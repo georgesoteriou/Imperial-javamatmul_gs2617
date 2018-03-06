@@ -10,6 +10,8 @@ public interface Matrix {
 
   public int getNumColumns();
 
+  public double[][] getMatrix();
+
   public default boolean equals(Matrix m, double delta) {
     if ((m.getNumRows() != this.getNumRows())
         || (m.getNumColumns() != this.getNumColumns())) {
@@ -28,4 +30,5 @@ public interface Matrix {
     }
     return true;
   }
+
 }
