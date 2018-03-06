@@ -16,8 +16,8 @@ public class MultiplyRow extends Thread{
 
   @Override
   public void run() {
-    for (int j = 0; j < b.getNumColumns(); j++) { // bColumn
-      for (int k = 0; k < a.getNumColumns(); k++) { // aColumn
+    for (int k = 0; k < a.getNumColumns(); k++) { // aColumn
+      for (int j = 0; j < b.getNumColumns(); j++) { // bColumn
         c[i][j] += a.get(i,k) * b.get(k,j);
       }
     }

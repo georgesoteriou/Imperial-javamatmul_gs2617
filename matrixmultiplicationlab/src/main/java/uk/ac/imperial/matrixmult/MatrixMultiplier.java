@@ -7,7 +7,7 @@ public class MatrixMultiplier {
   public static Matrix multiply(Matrix a, Matrix b) throws Exception {
     if(a.getNumColumns() == b.getNumRows()){
       double[][] c = new double[a.getNumRows()][b.getNumColumns()];
-
+      
       MultiplyRow[] rowThreads = new MultiplyRow[a.getNumRows()];
 
       for (int i = 0; i < a.getNumRows(); i++) { // aRow
