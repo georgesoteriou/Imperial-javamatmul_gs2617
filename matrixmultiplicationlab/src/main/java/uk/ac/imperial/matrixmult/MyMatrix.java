@@ -1,5 +1,7 @@
 package uk.ac.imperial.matrixmult;
 
+import java.util.ArrayList;
+
 public class MyMatrix implements Matrix {
     int nRows;
     int nCols;
@@ -19,7 +21,10 @@ public class MyMatrix implements Matrix {
 
     @Override
     public double get(int row, int column) {
-        return matrix[row][column];
+        if(row < nRows && column < nCols) {
+            return matrix[row][column];
+        }
+        return 0;
     }
 
     @Override
