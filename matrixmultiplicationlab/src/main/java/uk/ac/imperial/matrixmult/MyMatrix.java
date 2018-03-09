@@ -1,9 +1,11 @@
 package uk.ac.imperial.matrixmult;
 
+import java.util.Arrays;
+
 public class MyMatrix implements Matrix {
     int nRows;
     int nCols;
-    double[][] matrix;
+    public double[][] matrix;
 
     MyMatrix(int nRows, int nCols){
         this.nRows = nRows;
