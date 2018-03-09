@@ -56,8 +56,8 @@ public class MatrixBenchmark {
 
     //DENSE MATRIX BENCHMARK
 
-    Matrix da = create(953, 1492, 123456789);
-    Matrix db = create(1492, 833, 987654321);
+    Matrix da = create(10000, 10000, 123456789);
+    Matrix db = create(10000, 10000, 987654321);
 
     Matrix dres = MatrixMultiplier.multiply(da, db);
 
