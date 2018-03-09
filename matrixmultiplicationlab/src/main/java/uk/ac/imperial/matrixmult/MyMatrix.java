@@ -14,7 +14,7 @@ public class MyMatrix implements Matrix {
     }
 
     MyMatrix(double[][] source){
-        this.matrix = source.clone();
+        this.matrix = source;
         this.nRows = source.length;
         this.nCols = source[0].length;
     }

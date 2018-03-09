@@ -13,7 +13,7 @@ public class MatrixMultiplier {
 
       MultiplyRow[] rowThreads = new MultiplyRow[NUMBEROFTHREADS];
 
-      int RowsPerThread = max(a.getNumRows()/NUMBEROFTHREADS, 2);
+      int RowsPerThread = max(a.getNumRows()/NUMBEROFTHREADS, 4);
 
       for (int i = 0; i < NUMBEROFTHREADS; i++) {
         rowThreads[i] = new MultiplyRow(i*RowsPerThread, RowsPerThread + i*RowsPerThread, c, a, b);
